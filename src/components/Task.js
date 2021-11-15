@@ -1,16 +1,16 @@
-const Task = ({task, ...props}) => {
+const Task = ({tasks, ...props}) => {
 
     const ActionBtn = () => {
         return (
-        <div className='action-btn'>{!task.done ?
+        <div className='action-btn'>{!tasks.done ?
          <p onClick={props.DoneTask}>✅</p> :
          <p onClick={props.DeleteTask}>❌</p>}</div>
         )
     }
-    const className = 'task ' + (task.done ? 'task-done' : '');
+    const className = 'task ' + (tasks.done ? 'task-done' : '');
  return (
      <div className={className}>
-         <p>{task.title}</p>
+         <p>{tasks.title}</p>
          <ActionBtn></ActionBtn>
      </div>
  );
